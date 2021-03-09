@@ -1,0 +1,21 @@
+.popup__window {
+    width: 282px;
+    background: #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    padding-left: 22px;
+    padding-right: 22px;
+
+}
+
+@media screen and (min-width: 1280px) {
+    .popup__window {
+        width: 430px;
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}

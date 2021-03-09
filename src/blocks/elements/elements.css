@@ -1,0 +1,18 @@
+.elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(282px, 4fr));
+    list-style: none;
+    padding-left: 19px;
+    padding-right: 19px;
+    margin: 0;
+    grid-row-gap: 20px;
+
+}
+
+@media screen and (min-width: 1280px) {
+    .elements {
+        padding-left: 0;
+        padding-right: 0;
+        grid-column-gap: 17px;
+    }
+}
