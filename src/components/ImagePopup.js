@@ -3,12 +3,10 @@
 
 function ImagePopup ({card, onClose}) {
     let visible;
-    if (card !== ''){
+    if (card.src !== ''){
         visible = 'popup_visible'
     }
-    if (onClose === ''){
-        visible = ''
-    }
+
 
     return (
         <div className={`popup popup_image ${visible}`}>

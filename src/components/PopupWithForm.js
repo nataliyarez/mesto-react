@@ -5,9 +5,6 @@ function PopupWithForm(props) {
     if (props.isOpen===true){
         visible = 'popup_visible'
     }
-    if (props.onClose=== false){
-        visible = ''
-    }
     return (
 
         <div className={`popup popup_${props.name} ${visible}`} >
