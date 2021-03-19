@@ -71,8 +71,8 @@ class Api {
             .then(this._getResponseData);
 
     }
-    likeCard (isLike, cardId) { // лайкам и дизлайкам карточку
-        if (isLike === false) {
+    likeCard (cardId, isLike) { // лайкам и дизлайкам карточку
+        if (isLike === true) {
             return  fetch(this._baseUrl+'/cards/likes/'+cardId, {
                 method: 'PUT',
                 headers: this._headers
