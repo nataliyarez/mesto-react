@@ -1,28 +1,36 @@
 import PopupWithForm from "./PopupWithForm";
-import React from "react";
+import React, {useState} from "react";
 
 function AddPlacePopup (props) {
-    const nameRef = React.useRef();
-    const linkRef = React.useRef();
+    const [name, setName] = useState('');
+    const [link, setLink] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
 
         props.onAddPlaceSubmit(
-            nameRef.current.value,
-            linkRef.current.value,
+            name, link
         );
+        setName('');
+        setLink('');
+    }
 
+    function handleNameChange(evt) {
+        setName(evt.target.value);
+    }
+
+    function handleDescriptionChange(evt) {
+        setLink(evt.target.value);
     }
 
     return (
         <PopupWithForm onSubmit={handleSubmit} onClose={props.onClose} isOpen={props.isOpen} name="cad" title="Новое место">
 
-            <input ref={nameRef} className="form__input form__input_card" id="title" name="title" placeholder="Название"
+            <input value={name} onChange={handleNameChange} className="form__input form__input_card" id="title" name="title" placeholder="Название"
                    type="text"
                    minLength="2" maxLength="30" required/>
             <span id="title-error" className="error"></span>
-            <input ref={linkRef} className="form__input form__input_card" id="image" name="image" placeholder="Ссылка на картинку"
+            <input value={link} onChange={handleDescriptionChange} className="form__input form__input_card" id="image" name="image" placeholder="Ссылка на картинку"
                    required type="url"/>
             <span id="image-error" className="error"></span>
 
